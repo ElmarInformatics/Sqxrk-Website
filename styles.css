@@ -1,0 +1,266 @@
+/* General Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: 'Arial', sans-serif;
+    color: #fff;
+    background: linear-gradient(135deg, #9A32CD, #ff0000);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+ 
+  
+  }
+  
+  header {
+    text-align: center;
+    padding: 20px;
+  }
+  
+  .title {
+    font-size: 2.3rem;
+    color: #111;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  }
+  
+  /* Hero Section with 3D Cube */
+  .hero {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 50px 0;
+  }
+  
+  .cube {
+    position: relative;
+    width: 150px;
+    height: 150px;
+    transform-style: preserve-3d;
+    animation: rotate 10s infinite linear;
+  }
+  
+  .cube .face {
+    position: absolute;
+    width: 150px;
+    height: 150px;
+    background: rgba(255, 255, 255, 0.2);
+    border: 2px solid rgba(255, 255, 255, 0.6);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.2rem;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+  }
+  
+  .cube .front  { transform: translateZ(75px); }
+  .cube .back   { transform: rotateY(180deg) translateZ(75px); }
+  .cube .right  { transform: rotateY(90deg) translateZ(75px); }
+  .cube .left   { transform: rotateY(-90deg) translateZ(75px); }
+  .cube .top    { transform: rotateX(90deg) translateZ(75px); }
+  .cube .bottom { transform: rotateX(-90deg) translateZ(75px); }
+  
+  @keyframes rotate {
+    0% { transform: rotateX(0) rotateY(0); }
+    100% { transform: rotateX(360deg) rotateY(360deg); }
+  }
+
+
+
+   /* About me Section */
+   .about {
+    text-align: center;
+    margin: 50px 20px;
+  }
+  
+  .about p {
+    margin-bottom: 20px;
+    font-weight: 600;
+    font-size: 1.6rem;
+    color: #111;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  }
+
+
+  
+  /* Social Media Section */
+  .social-media {
+    text-align: center;
+    margin: 50px 20px;
+  }
+  
+  .social-media h2 {
+    margin-bottom: 20px;
+    font-size: 2rem;
+    color: #111;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  }
+  
+  .icons {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+  }
+  
+  .icon {
+    text-decoration: none;
+    color: #fff;
+    font-size: 1.2rem;
+    padding: 10px 20px;
+    border-radius: 5px;
+    background: rgba(255, 255, 255, 0.2);
+    transition: transform 0.3s, background 0.3s;
+  }
+  
+  .icon:hover {
+    background: rgba(255, 255, 255, 0.4);
+    transform: scale(1.1);
+  }
+  
+  .discord { background-color: #9A32CD; }
+  .twitter { background-color: #ff0000; }
+  .instagram { background-color: #9A32CD; }
+  .facebook { background-color: #ff0000; }
+
+  
+  /* Footer */
+  footer {
+    text-align: center;
+    padding: 20px;
+    margin-top: auto;
+    background: #111;
+  }
+
+
+  footer p {
+    text-align: center;
+   
+    margin-top: auto;
+    font-size: 1.3rem;
+   
+  }
+  
+
+  @media (max-width: 768px) {
+    .title {
+      font-size: 2rem;
+    }
+  
+    .cube {
+      width: 100px;
+      height: 100px;
+    }
+  
+    .cube .face {
+      width: 100px;
+      height: 100px;
+      font-size: 0.9rem;
+    }
+  
+    .icons {
+      flex-direction: column;
+      gap: 15px;
+    }
+  
+    .icon {
+      font-size: 1rem;
+      padding: 8px 15px;
+    }
+  }
+  
+
+  .musika {
+    text-align: center;
+    justify-content: center;
+  
+
+
+ 
+   
+  }
+
+
+  .music-player {
+    width: 300px;
+    perspective: 1000px;
+    align-items: center;
+
+    max-height: 100%;
+    max-width: 100%;
+    margin: auto;
+    object-fit: contain;
+  
+}
+
+.player-body {
+    background: #20232a;
+    border-radius: 20px;
+    padding: 20px;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+    transform: rotateY(0deg);
+    transition: transform 0.5s ease;
+}
+
+.player-body:hover {
+    transform: rotateY(10deg);
+}
+
+.vinyl {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    background: radial-gradient(circle, #333 60%, #000);
+    position: relative;
+    animation: spin 5s linear infinite;
+}
+
+.vinyl .label {
+    width: 40px;
+    height: 40px;
+
+    border-radius: 50%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.controls {
+    margin-top: 20px;
+    display: flex;
+    gap: 10px;
+}
+
+.controls button {
+    background: #ff0000;
+    border: none;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    color: white;
+    font-size: 18px;
+    cursor: pointer;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.2s ease;
+}
+
+.controls button:hover {
+    transform: scale(1.1);
+}
+
+@keyframes spin {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
